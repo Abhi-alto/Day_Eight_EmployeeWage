@@ -1,12 +1,13 @@
 ﻿using Ques_1;
 Console.WriteLine("Welcome to Employee Wage Computation program");
-int r = Wage.Rndm();            //Calling a static function
-if (r == 1)
+Console.WriteLine("Enter 1 - Part time & 2- for full time employee");    //either part time or full time employee
+int choice = Convert.ToInt16(Console.ReadLine());
+if (choice < 1 || choice > 2)
 {
-    Console.WriteLine("Employee is Present");
-    Console.WriteLine("Daily wage of the employee is = " + (Wage.wagee()));
+    Console.WriteLine("Wrong input");
+    Environment.Exit(1);                       //for exiting the code
 }
 else
 {
-    Console.WriteLine("Employee is Absent");
+    Wage.compute(choice);
 }
